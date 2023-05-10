@@ -5,12 +5,7 @@
 package Modelo;
 
 import java.time.LocalDate;
-
-/**
- *
- * @author Jonathan
- */
-public class Entrada extends Movimiento{
+    public class Entrada extends Movimiento{
     private int idEntradaProducto;
     private String idProveedor;
     private LocalDate fechaEntrada;
@@ -41,7 +36,6 @@ public class Entrada extends Movimiento{
     public void setFechaEntrada(LocalDate fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
-
     
     
 }

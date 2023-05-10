@@ -31,7 +31,6 @@ public class formRegistroSalidasAdd extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
     public formRegistroSalidasAdd(Usuario user) {
         initComponents();
         this.sysUser = user;
@@ -46,7 +45,6 @@ public class formRegistroSalidasAdd extends javax.swing.JFrame {
         jtxentrada.removeAllItems();
         for(Cliente cli:client){
             jtxentrada.addItem(new Cliente(cli.getIdCliente(), cli.getPrimerApellido()));
-            //jtxentrada.addItem(new Proveedor(String.valueOf(pro.getIdProveedor()), String.valueOf(pro.getPrimerNombre())));
         }
         
     }
@@ -235,8 +233,7 @@ public class formRegistroSalidasAdd extends javax.swing.JFrame {
                 !txtTotal.getText().equals("") ){
             
             entra.setCodigo((String)txtcodigo.getText());
-              entra.setIdCliente(String.valueOf(jtxentrada.getItemAt(jtxentrada.getSelectedIndex()).getIdCliente()));
-            //entra.setIdCliente(String.valueOf(txtClien.getText()));
+            entra.setIdCliente(String.valueOf(jtxentrada.getItemAt(jtxentrada.getSelectedIndex()).getIdCliente()));          
             entra.setSubtotal(Float.parseFloat(txtSubTotal.getText()));
             entra.setValorIva((int) listIva.getItemAt(listIva.getSelectedIndex()).getValor());
             entra.setTotal(Float.parseFloat(txtTotal.getText()));

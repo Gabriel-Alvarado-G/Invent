@@ -9,8 +9,6 @@ import DAO.SalidaDAO;
 import Modelo.Cliente;
 import Modelo.Salida;
 import DAO.EntradaDAO;
-import DAO.ProveedorDAO;
-import Modelo.Proveedor;
 import Modelo.Entrada;
 import Modelo.Iva;
 import Modelo.Usuario;
@@ -55,26 +53,20 @@ public class formRegistroSalidasEdit extends javax.swing.JFrame {
         SalidaDAO entraDAO = new SalidaDAO();
         
         System.out.println(identra);
-        entra = entraDAO.leer(Integer.parseInt(identra));
-        
-        txtCodigo.setText(entra.getCodigo());
-       // entra.setIdProveedor(String.valueOf(jtxentrada.getItemAt(jtxentrada.getSelectedIndex()).getIdProveedor()));
+        entra = entraDAO.leer(Integer.parseInt(identra));       
+        txtCodigo.setText(entra.getCodigo());    
         txtSubTotal.setText(String.valueOf(entra.getSubtotal()));
         txtTotal.setText(String.valueOf(entra.getTotal()));
     }
         public void getCliente(){
         ClienteDAO clientDAO = new ClienteDAO();
         List<Cliente> client = clientDAO.listar();
-
         jtxentrada.removeAllItems();
         for(Cliente cli:client){
-            jtxentrada.addItem(new Cliente(cli.getIdCliente(), cli.getPrimerApellido()));
-            //jtxentrada.addItem(new Proveedor(String.valueOf(pro.getIdProveedor()), String.valueOf(pro.getPrimerNombre())));
+            jtxentrada.addItem(new Cliente(cli.getIdCliente(), cli.getPrimerApellido()));          
         }
         
-    }
-    
-   
+    }       
     
     public void getPorcentaje(){
         
@@ -247,13 +239,11 @@ public class formRegistroSalidasEdit extends javax.swing.JFrame {
         Entrada entra = new Entrada();
         EntradaDAO entraDAO = new EntradaDAO();
         
-        if(!txtCodigo.getText().equals("") && //!txtIdProve.getText().equals("") && 
+        if(!txtCodigo.getText().equals("") && 
                 !txtSubTotal.getText().equals("") && 
                 !txtFecha2.getText().equals("")&& 
                 !txtFecha2.getText().equals("dd/MM/yyyy")){
-            //asaisas
-           entra.setCodigo((String)txtCodigo.getText());
-            //entra.setIdProveedor(String.valueOf(txtIdProve.getText()));
+             entra.setCodigo((String)txtCodigo.getText());
             entra.setIdProveedor(String.valueOf(jtxentrada.getItemAt(jtxentrada.getSelectedIndex()).getIdCliente()));
              entra.setIdProveedor(String.valueOf(idCliente));
             entra.setSubtotal(Float.parseFloat(txtSubTotal.getText()));

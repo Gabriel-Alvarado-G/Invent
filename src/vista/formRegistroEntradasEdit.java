@@ -4,12 +4,10 @@
  */
 package vista;
 
-import DAO.CategoriaDAO;
-import DAO.ClienteDAO;
+
 import DAO.EntradaDAO;
 import DAO.ProveedorDAO;
 import Modelo.Proveedor;
-import Modelo.Cliente;
 import Modelo.Entrada;
 import Modelo.Iva;
 import Modelo.Usuario;
@@ -29,9 +27,6 @@ public class formRegistroEntradasEdit extends javax.swing.JFrame {
     Usuario sysUser;
     String identra;
     String idProveedor;
-    /**
-     * Creates new form formUsuarioAdd
-     */
     public formRegistroEntradasEdit() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -57,7 +52,6 @@ public class formRegistroEntradasEdit extends javax.swing.JFrame {
         entra = entraDAO.leer(Integer.parseInt(identra));
         
         txtCodigo.setText(entra.getCodigo());
-       // entra.setIdProveedor(String.valueOf(jtxentrada.getItemAt(jtxentrada.getSelectedIndex()).getIdProveedor()));
         txtSubTotal.setText(String.valueOf(entra.getSubtotal()));
         txtTotal.setText(String.valueOf(entra.getTotal()));
     }
@@ -68,34 +62,9 @@ public class formRegistroEntradasEdit extends javax.swing.JFrame {
         jtxentrada.removeAllItems();
         for(Proveedor pro:prove){
             jtxentrada.addItem(new Proveedor(pro.getIdProveedor(), pro.getPrimerNombre()));
-            //jtxentrada.addItem(new Proveedor(String.valueOf(pro.getIdProveedor()), String.valueOf(pro.getPrimerNombre())));
+            
         }    
     }
-    
-    
-   /* public void getCategorias(){
-        CategoriaDAO cateDAO = new CategoriaDAO();
-        List<Categoria> categorias = cateDAO.listar();
-
-        listCategoria.removeAllItems();
-        for(Categoria cat:categorias){
-            listCategoria.addItem(new Categoria(cat.getIdCategoria(),cat.getNombre()));
-        }
-        
-    }*/
-    
-    
-   /* public void getMedidas(){
-        MedidaDAO mediDAO = new MedidaDAO();
-        List<Medida> medidas = mediDAO.listar();
-
-        listMedida.removeAllItems();
-        for(Medida med:medidas){
-            listMedida.addItem(new Medida(med.getIdMedida(), med.getAbreviatura()));
-        }
-        
-    }*/
-    
     
     public void getPorcentaje(){
         
@@ -268,15 +237,13 @@ public class formRegistroEntradasEdit extends javax.swing.JFrame {
         Entrada entra = new Entrada();
         EntradaDAO entraDAO = new EntradaDAO();
         
-        if(!txtCodigo.getText().equals("") && //!txtIdProve.getText().equals("") && 
+        if(!txtCodigo.getText().equals("") && 
                 !txtSubTotal.getText().equals("") && 
                 !txtFecha2.getText().equals("")&& 
                 !txtFecha2.getText().equals("dd/MM/yyyy")){
-            //asaisas
-           entra.setCodigo((String)txtCodigo.getText());
-            //entra.setIdProveedor(String.valueOf(txtIdProve.getText()));
+            entra.setCodigo((String)txtCodigo.getText());
             entra.setIdProveedor(String.valueOf(jtxentrada.getItemAt(jtxentrada.getSelectedIndex()).getIdProveedor()));
-             entra.setIdProveedor(String.valueOf(idProveedor));
+            entra.setIdProveedor(String.valueOf(idProveedor));
             entra.setSubtotal(Float.parseFloat(txtSubTotal.getText()));
             entra.setValorIva((int) listIva.getItemAt(listIva.getSelectedIndex()).getValor());                      
             LocalDate fecha = LocalDate.parse(txtFecha2.getText(),DateTimeFormatter.ofPattern("dd/MM/yyyy")); 

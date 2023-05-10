@@ -4,20 +4,12 @@
  */
 package Modelo;
 
-import java.time.LocalDateTime;
 
-/**
- *
- * @author Jonathan
- */
 public class Proveedor extends Externo{
     
     private int idProveedor;
     private String primerNombre;
 
-    /*public Proveedor(int idProveedor, String primerNombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }*/
      public Proveedor(){
 
     }
