@@ -174,7 +174,7 @@ public class formRegistroSalidasAdd extends javax.swing.JFrame {
                 txtFecha2ActionPerformed(evt);
             }
         });
-        panMain.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 170, 30));
+        panMain.add(txtFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 190, 30));
 
         listIva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

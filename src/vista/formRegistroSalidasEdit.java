@@ -132,7 +132,7 @@ public class formRegistroSalidasEdit extends javax.swing.JFrame {
 
         labIdProve.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labIdProve.setText("ID Cliente");
-        labSubTotal.add(labIdProve, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+        labSubTotal.add(labIdProve, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
 
         btnGuardar.setBackground(new java.awt.Color(204, 204, 204));
         btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -200,7 +200,7 @@ public class formRegistroSalidasEdit extends javax.swing.JFrame {
                 txtTotalActionPerformed(evt);
             }
         });
-        labSubTotal.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 200, 30));
+        labSubTotal.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 200, 30));
 
         jtxentrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
