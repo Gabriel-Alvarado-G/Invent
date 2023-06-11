@@ -14,8 +14,21 @@ public class Salida extends Movimiento{
     private int idSalidaProducto;
     private String idCliente;
     private LocalDate fechaSalida;
-    private int valorIva;
+    private String codigo;
+        public Salida() {       
+        }
 
+          public Salida(int idSalidaProducto, String codigo) {
+        this.idSalidaProducto = idSalidaProducto;
+        this.codigo = codigo;
+        }
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
     public int getIdSalidaProducto() {
         return idSalidaProducto;
     }
@@ -39,6 +52,8 @@ public class Salida extends Movimiento{
     public void setFechaSalida(LocalDate fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
-    
+     public String toString(){    
+        return this.codigo; 
+    }
     
 }

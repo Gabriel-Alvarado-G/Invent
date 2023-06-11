@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Modelo.DetalleEntrada;
 import Modelo.DetalleSalida;
 import java.util.List;
 
@@ -15,5 +16,6 @@ public interface IDetalleSalida {
     public Boolean registrar(DetalleSalida detalle);
     public Boolean modificar(DetalleSalida detalle);
     public Boolean eliminar(DetalleSalida detalle);
-    public List<DetalleSalida> consultar();    
+    public List<DetalleSalida> consultar(); 
+    public DetalleSalida leer(int idDetalleSalida);
 }

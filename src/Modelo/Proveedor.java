@@ -35,8 +35,7 @@ public class Proveedor extends Externo{
     public void setPrimerNombre(String primerNombre) {
         this.primerNombre = primerNombre;
     }
- public String toString(){
-        
+    public String toString(){    
         return this.primerNombre; 
     }
 

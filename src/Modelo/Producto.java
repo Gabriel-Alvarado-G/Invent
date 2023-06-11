@@ -25,9 +25,13 @@ public class Producto extends RegistroAuditoria{
     
     public Producto(){
     }
-
+    public Producto(int idProducto, String nombre){
+        this.idProducto = idProducto;
+        this.nombre = nombre;
+    }
     public int getIdProducto() {
         return idProducto;
+       
     }
 
     public void setIdProducto(int idProducto) {
@@ -97,11 +101,7 @@ public class Producto extends RegistroAuditoria{
     public void setFechaCaducidad(LocalDate fechaCaducidad) {
         this.fechaCaducidad = fechaCaducidad;
     }
-
-
-    
-    
-    
-    
-    
+    public String toString(){    
+        return this.nombre; 
+    }   
 }

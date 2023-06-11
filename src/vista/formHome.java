@@ -77,6 +77,8 @@ public class formHome extends javax.swing.JFrame {
         menuItem8 = new javax.swing.JButton();
         menuItem9 = new javax.swing.JButton();
         menuItem10 = new javax.swing.JButton();
+        menuItem11 = new javax.swing.JButton();
+        menuItem12 = new javax.swing.JButton();
         panHeader = new javax.swing.JPanel();
         labNameEmpresa = new javax.swing.JLabel();
         labFechaActual = new javax.swing.JLabel();
@@ -227,6 +229,32 @@ public class formHome extends javax.swing.JFrame {
             }
         });
 
+        menuItem11.setBackground(new java.awt.Color(11, 58, 82));
+        menuItem11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        menuItem11.setForeground(new java.awt.Color(255, 255, 255));
+        menuItem11.setText("Detalle de Entradas");
+        menuItem11.setBorder(null);
+        menuItem11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem11.setFocusable(false);
+        menuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItem11ActionPerformed(evt);
+            }
+        });
+
+        menuItem12.setBackground(new java.awt.Color(11, 58, 82));
+        menuItem12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        menuItem12.setForeground(new java.awt.Color(255, 255, 255));
+        menuItem12.setText("Detalle de Salidas");
+        menuItem12.setBorder(null);
+        menuItem12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuItem12.setFocusable(false);
+        menuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItem12ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panMenuLayout = new javax.swing.GroupLayout(panMenu);
         panMenu.setLayout(panMenuLayout);
         panMenuLayout.setHorizontalGroup(
@@ -249,6 +277,8 @@ public class formHome extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labNameSystem)
                 .addGap(97, 97, 97))
+            .addComponent(menuItem11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menuItem12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panMenuLayout.setVerticalGroup(
             panMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +296,11 @@ public class formHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(menuItem4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(menuItem11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(menuItem5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(menuItem12, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(menuItem6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -344,7 +378,7 @@ public class formHome extends javax.swing.JFrame {
             .addGroup(panContainerLayout.createSequentialGroup()
                 .addComponent(panMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panContent, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+                .addComponent(panContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(panContainerLayout.createSequentialGroup()
                 .addGap(264, 264, 264)
@@ -484,6 +518,28 @@ public class formHome extends javax.swing.JFrame {
         panContent.repaint();
     }//GEN-LAST:event_menuItem10ActionPerformed
 
+    private void menuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem11ActionPerformed
+        formDetalleEntrada1 entr = new formDetalleEntrada1(sysUser);
+        entr.setSize(900,700);
+        entr.setLocation(0,0);
+
+        panContent.removeAll();
+        panContent.add(entr,BorderLayout.CENTER);
+        panContent.revalidate();
+        panContent.repaint();
+    }//GEN-LAST:event_menuItem11ActionPerformed
+
+    private void menuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem12ActionPerformed
+        formDetalleSalida entr = new formDetalleSalida(sysUser);
+        entr.setSize(900,700);
+        entr.setLocation(0,0);
+
+        panContent.removeAll();
+        panContent.add(entr,BorderLayout.CENTER);
+        panContent.revalidate();
+        panContent.repaint();
+    }//GEN-LAST:event_menuItem12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -529,6 +585,8 @@ public class formHome extends javax.swing.JFrame {
     private javax.swing.JLabel labUsername;
     private javax.swing.JButton menuItem1;
     private javax.swing.JButton menuItem10;
+    private javax.swing.JButton menuItem11;
+    private javax.swing.JButton menuItem12;
     private javax.swing.JButton menuItem2;
     private javax.swing.JButton menuItem3;
     private javax.swing.JButton menuItem4;

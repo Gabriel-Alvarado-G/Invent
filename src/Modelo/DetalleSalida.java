@@ -11,9 +11,10 @@ package Modelo;
 public class DetalleSalida extends Movimiento{
     
     private int idDetalleSalidaProducto;
-    private int idSalidaProducto;
-    private int idProducto;
-
+    private String idSalidaProducto;
+    private String idProducto;
+    
+  
     public int getIdDetalleSalidaProducto() {
         return idDetalleSalidaProducto;
     }
@@ -22,19 +23,19 @@ public class DetalleSalida extends Movimiento{
         this.idDetalleSalidaProducto = idDetalleSalidaProducto;
     }
 
-    public int getIdSalidaProducto() {
+    public String getIdSalidaProducto() {
         return idSalidaProducto;
     }
 
-    public void setIdSalidaProducto(int idSalidaProducto) {
+    public void setIdSalidaProducto(String idSalidaProducto) {
         this.idSalidaProducto = idSalidaProducto;
     }
 
-    public int getIdProducto() {
+    public String getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
+    public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
     

@@ -47,7 +47,7 @@ public class EntradaDAO implements IEntradaInventario{
 
     @Override
     public Boolean modificar(Entrada entrada) {
-        String sql = "UPDATE entradaproducto SET codigo='"
+        String sql = "UPDATE EntradaProducto SET codigo='"
                 + entrada.getCodigo()+"',idProveedor='"
                 + entrada.getIdProveedor()+"',fechaEntrada='"
                 + entrada.getFechaEntrada()+"',subtotal='"
@@ -58,7 +58,7 @@ public class EntradaDAO implements IEntradaInventario{
                 + entrada.getFechaModifica().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))+"',usuarioModifica='"
                 + entrada.getUsuarioModifica()+"' WHERE idEntradaProducto="
                 + entrada.getIdEntradaProducto();
-        
+             
         if(bd.update(sql) > 0){
             return true;
         }
